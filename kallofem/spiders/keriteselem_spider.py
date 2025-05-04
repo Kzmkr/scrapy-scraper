@@ -15,6 +15,4 @@ class KeritesElemSpider(scrapy.Spider):
                 "name": prod.xpath(".//h4/text()").get(),
                 "image": prod.xpath(".//img/@src").get(),
                 "price": prod.css(".product-price::text").get(),
-
-
             }
