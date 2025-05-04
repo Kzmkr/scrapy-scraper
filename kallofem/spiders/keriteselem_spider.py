@@ -13,7 +13,7 @@ class KeritesElemSpider(scrapy.Spider):
         for prod in response.css("div.product-group-container article.product-row"):
             yield {
                 "name": prod.xpath(".//h4/text()").get(),
-                "image": prod.xpath(".//img/@src").get(),
+                "image":  response.urljoin(prod.xpath(".//img/@src").get()),
                 "price": prod.css(".product-price::text").get(),
             }
 
