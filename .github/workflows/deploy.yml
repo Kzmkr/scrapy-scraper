@@ -3,7 +3,7 @@ name: Deploy Scrapy Project
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   deploy:
