@@ -16,7 +16,6 @@ class KeritesElemSpider(scrapy.Spider):
                 "image":  response.urljoin(prod.xpath(".//img/@src").get()),
                 "price": prod.css(".product-price::text").get(),
             }
-
             next_page =response.xpath('//a[@rel="next"]/@href').get()
             if next_page is not None:
                 yield response.follow(next_page, callback=self.parse)
